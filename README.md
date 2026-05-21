@@ -2,6 +2,8 @@
 
 A real-time 2-player emoji matching game. Both players pick an emoji — if they match, they win. Build a streak by winning consecutive rounds.
 
+**Play it:** https://nick-nijland.github.io/emoji-game/
+
 ## How to play
 
 1. Player 1 opens the app and creates a room — they get a 4-digit code
@@ -11,8 +13,8 @@ A real-time 2-player emoji matching game. Both players pick an emoji — if they
 
 ## Stack
 
-- **Frontend** — Angular 19 (signals, standalone components)
-- **Backend** — Node.js + Express + Socket.IO
+- **Frontend** — Angular (signals, standalone components), hosted on GitHub Pages
+- **Backend** — Node.js + Express + Socket.IO, hosted on Render
 - **Emojis** — full Unicode emoji set via `unicode-emoji-json` (~1900 emojis)
 
 ## Running locally
