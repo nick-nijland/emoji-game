@@ -1,5 +1,6 @@
 import { Component, signal, OnDestroy } from '@angular/core';
 import { io, Socket } from 'socket.io-client';
+import { environment } from '../environments/environment';
 
 type GameState = 'lobby' | 'waiting' | 'picking' | 'waiting-result' | 'result';
 
@@ -23,7 +24,7 @@ export class App implements OnDestroy {
   error = signal<string | null>(null);
 
   constructor() {
-    this.socket = io('http://localhost:3000');
+    this.socket = io(environment.socketUrl);
 
     this.socket.on('room-created', ({ roomCode }: { roomCode: string }) => {
       this.roomCode.set(roomCode);
