@@ -1,3 +1,3 @@
 export const environment = {
-  socketUrl: 'https://emoji-game-backend.onrender.com',
+  socketUrl: 'https://emoji-game-i611.onrender.com',
 };
