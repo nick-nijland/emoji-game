@@ -1,0 +1,233 @@
+main {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  font-family: system-ui, sans-serif;
+  background: #f9f9fb;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0 0 1.75rem;
+  color: #1a1a2e;
+}
+
+// ── Lobby ──────────────────────────────────────────────
+.lobby {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 280px;
+}
+
+.divider {
+  color: #aaa;
+  font-size: 0.85rem;
+  position: relative;
+  width: 100%;
+  text-align: center;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background: #ddd;
+  }
+  &::before { left: 0; }
+  &::after  { right: 0; }
+}
+
+.join-row {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+
+  input {
+    flex: 1;
+    padding: 0.6rem 0.75rem;
+    font-size: 1rem;
+    font-family: inherit;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+    transition: border-color 0.15s;
+
+    &:focus { border-color: #7c3aed; }
+  }
+}
+
+.error {
+  color: #b91c1c;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+// ── Waiting ────────────────────────────────────────────
+.waiting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+
+  p { margin: 0; color: #555; }
+  .sub { color: #999; font-size: 0.9rem; }
+}
+
+.room-code {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: #7c3aed;
+  margin: 0.25rem 0;
+}
+
+.my-pick {
+  font-size: 5rem;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+// ── Picking ────────────────────────────────────────────
+.turn-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.turn-indicator {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.opponent-status {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #f59e0b;
+
+  &.muted { color: #aaa; font-weight: 400; }
+}
+
+.emoji-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  max-width: 360px;
+  width: 100%;
+}
+
+.emoji-btn {
+  font-size: 2rem;
+  padding: 0.4rem;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  transition: transform 0.1s, border-color 0.15s, box-shadow 0.15s;
+  line-height: 1;
+
+  &:hover {
+    transform: scale(1.15);
+    border-color: #a78bfa;
+    box-shadow: 0 2px 8px rgba(167, 139, 250, 0.35);
+  }
+
+  &:active { transform: scale(0.95); }
+}
+
+// ── Result ─────────────────────────────────────────────
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.choices {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+
+  .label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .picked {
+    font-size: 4rem;
+    line-height: 1;
+  }
+}
+
+.vs {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #aaa;
+}
+
+.outcome {
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+
+  &.win  { background: #d1fae5; color: #065f46; }
+  &.lose { background: #fee2e2; color: #991b1b; }
+}
+
+// ── Streak ─────────────────────────────────────────────
+.streak-badge {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #d97706;
+  background: #fef3c7;
+  padding: 0.3rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 0.5rem;
+}
+
+// ── Shared ─────────────────────────────────────────────
+.label {
+  font-size: 0.85rem;
+  color: #777;
+  margin: 0;
+}
+
+.action-btn {
+  padding: 0.65rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #7c3aed;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  width: 100%;
+
+  &:hover  { background: #6d28d9; }
+  &:active { transform: scale(0.97); }
+}
