@@ -1,59 +1,33 @@
-# EmojiGame
+# Emoji Match
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.11.
+A real-time 2-player emoji matching game. Both players pick an emoji — if they match, they win. Build a streak by winning consecutive rounds.
 
-## Development server
+## How to play
 
-To start a local development server, run:
+1. Player 1 opens the app and creates a room — they get a 4-digit code
+2. Player 2 opens the app on their device and enters the code to join
+3. Each round, both players are shown the same 4 random emojis and pick one simultaneously
+4. If both picked the same emoji, the streak goes up — if not, it resets
 
+## Stack
+
+- **Frontend** — Angular 19 (signals, standalone components)
+- **Backend** — Node.js + Express + Socket.IO
+- **Emojis** — full Unicode emoji set via `unicode-emoji-json` (~1900 emojis)
+
+## Running locally
+
+**Start the backend** (port 3000):
 ```bash
-ng serve
+cd server
+npm install
+npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+**Start the frontend** (port 4200):
 ```bash
-ng generate component component-name
+npm install
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Open `http://localhost:4200` on two devices (or two browser tabs) and start playing.
